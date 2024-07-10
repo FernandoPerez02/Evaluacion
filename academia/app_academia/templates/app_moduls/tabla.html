@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'static_app/css/tabla.css' %}">
+</head>
+<body>
+    <a href="{% url 'agregarestu' %}"><button type="submit">Agregar Estudiante</button></a>
+    <table class="container-fluid row" id="list_contenedor">
+
+        <tr>
+          <th class="primera_celda">Nombre</th>
+          <th>Apellido</th>
+          <th>Documento</th>
+          <th>Correo</th>
+        </tr>
+    
+        {% for estu in listaest %}
+        <tr class="separador-row">
+          
+              <td>{{estu.nombre}}</td>
+              <td>{{estu.apellido}}</td>
+              <td>{{estu.documento}}</td>
+              <td>{{estu.correo}}</td>
+              
+            <td>
+                <a href="{% url 'editar' estu.id_estudiante %}"><button type="submit">Editar</button></a>
+                <a href="{% url 'eliminar' estu.id_estudiante %}"><button type="submit">Eliminar</button></a>
+            </td>
+    
+        </tr>
+        {% endfor %}
+        <tr>
+      </table>
+    
+</body>
+</html>
+{% endblock %}
