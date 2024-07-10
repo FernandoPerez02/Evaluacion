@@ -55,7 +55,7 @@ ROOT_URLCONF = 'academia.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['D:/TRABAJOS/Evalucacion/academia/app_academia/templates/app_moduls'],
+        'DIRS': ['D:/TRABAJOS/Evaluacion/academia/app_academia/templates/app_moduls'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
